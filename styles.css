@@ -14,11 +14,16 @@ body {
     text-align: center;
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .specific-buttons {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 12px; /* Space between buttons */
     margin-top: 12px; /* Add some space above the button group */
 }
@@ -35,7 +40,8 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    min-width: 100px;
+    width: 200px;
+    text-align: center;
 }
 
 .specific-buttons button:hover {
@@ -49,6 +55,7 @@ body {
 }
 
 /* Style for Go PLUH Mode Button */
+/* Style for Go PLUH Mode Button */
 .bn29 {
     border: none;
     padding: 0.8em 2.5em;
@@ -60,10 +67,9 @@ body {
     cursor: pointer;
     background: none;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
-    margin-bottom: 10px;
-    width: auto;
-    max-width: 90%;
-    word-wrap: break-word;
+    margin-bottom: 20px; /* Space between Go PLUH Mode and specific buttons */
+    max-width: 90%; /* Prevent overflow on smaller screens */
+    width: 220px; /* Ensure consistent width with the smaller buttons */
 }
 
 .bn29:before,
@@ -123,21 +129,20 @@ body {
     z-index: 5;
 }
 
-/* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .specific-buttons {
-        flex-direction: column; /* Stack buttons vertically on narrow screens */
-        gap: 8px; /* Reduce space between buttons */
-        margin-top: 15px;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce gap between buttons */
+        align-items: center; /* Ensure buttons remain centered */
     }
 
     .specific-buttons button {
-        width: 80%; /* Make buttons take up more horizontal space */
-        min-width: 150px; /* Ensure buttons are still large enough to tap */
+        width: 90%; /* Buttons take up most of the screen's width */
+        max-width: 250px; /* Set a max width to prevent overly large buttons */
     }
 
     .bn29 {
-        padding: 0.6em 1.5em; /* Adjust padding for smaller screens */
-        font-size: 1em; /* Reduce font size slightly */
+        width: 90%; /* Ensure Go PLUH Mode button fits within the screen */
+        max-width: 250px; /* Maintain consistent size with smaller buttons */
     }
 }
