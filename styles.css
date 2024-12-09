@@ -35,6 +35,7 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 100px;
 }
 
 .specific-buttons button:hover {
@@ -60,6 +61,9 @@ body {
     background: none;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
     margin-bottom: 10px;
+    width: auto;
+    max-width: 90%;
+    word-wrap: break-word;
 }
 
 .bn29:before,
@@ -86,6 +90,7 @@ body {
         #07b39b,
         #6fba82
     );
+    
 }
 
 .bn29:before {
@@ -116,4 +121,23 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 5;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .specific-buttons {
+        flex-direction: column; /* Stack buttons vertically on narrow screens */
+        gap: 8px; /* Reduce space between buttons */
+        margin-top: 15px;
+    }
+
+    .specific-buttons button {
+        width: 80%; /* Make buttons take up more horizontal space */
+        min-width: 150px; /* Ensure buttons are still large enough to tap */
+    }
+
+    .bn29 {
+        padding: 0.6em 1.5em; /* Adjust padding for smaller screens */
+        font-size: 1em; /* Reduce font size slightly */
+    }
 }
